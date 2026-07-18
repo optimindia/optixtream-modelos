@@ -48,7 +48,7 @@ const showroomRequirements = [
 for (const [needle, message] of showroomRequirements) {
   if (!index.includes(needle)) fail(message);
 }
-const pickerModels = [...index.matchAll(/class="model-picker"[^>]+data-pick="(\d{2})"/g)].map((match) => match[1]);
+const pickerModels = [...index.matchAll(/class="[^"]*\bmodel-picker\b[^"]*"[^>]+data-pick="(\d{2})"/g)].map((match) => match[1]);
 if (JSON.stringify(pickerModels) !== JSON.stringify(expected)) {
   fail(`Showcase picker order must be ${expected.join(', ')}; received ${pickerModels.join(', ') || 'none'}`);
 }
