@@ -111,7 +111,8 @@ if (existsSync(indexPath)) {
     ['class="assurance-grid"', 'Catalog is missing the assurance section'],
     ['class="process-grid"', 'Catalog is missing the selection process'],
     ['aria-live="polite"', 'Showcase changes are not announced'],
-    ['Plus+Jakarta+Sans', 'Catalog is missing the approved typography']
+    ['Plus+Jakarta+Sans', 'Catalog is missing the approved typography'],
+    ['<em>cada manera<br>de vender.</em>', 'Catalog heading must wrap without clipping on desktop']
   ];
   for (const [needle, message] of showroomRequirements) {
     if (!index.includes(needle)) fail(message);
@@ -130,6 +131,12 @@ if (existsSync(stylesPath)) {
   const rootStyles = readFileSync(stylesPath, 'utf8');
   for (const token of ['#F5F5F7', '#FFFFFF', '#111216', '#686A73', '#4F66FF', '#FF775F']) {
     if (!rootStyles.toUpperCase().includes(token)) fail(`Catalog styles are missing token ${token}`);
+  }
+  if (/\.hero\s*\{[^}]*min-height:\s*calc\(100svh/i.test(rootStyles)) {
+    fail('Catalog hero must size to its content instead of forcing an empty viewport');
+  }
+  if (!/scroll-margin-top:\s*6rem/i.test(rootStyles)) {
+    fail('Catalog anchors need a 6rem offset for the sticky navigation');
   }
 }
 

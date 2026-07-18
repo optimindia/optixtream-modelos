@@ -37,7 +37,7 @@ button { font: inherit; }
 .nav-cta { justify-self: end; display: inline-flex; align-items: center; gap: .7rem; padding: .7rem 1rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.78); color: var(--graphite); text-decoration: none; font-size: .72rem; font-weight: 700; box-shadow: 0 4px 18px rgba(27,32,57,.04); transition: transform .2s ease, box-shadow .2s ease; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
-.hero { min-height: calc(100svh - 5rem); padding: clamp(4.5rem, 8vw, 7.8rem) 0 clamp(3rem, 7vw, 6.2rem); display: grid; grid-template-columns: minmax(0, .86fr) minmax(28rem, 1.14fr); align-items: center; gap: clamp(3rem, 7vw, 7.5rem); }
+.hero { min-height: auto; padding: clamp(4.5rem, 8vw, 7.8rem) 0 clamp(3rem, 7vw, 6.2rem); display: grid; grid-template-columns: minmax(0, .86fr) minmax(28rem, 1.14fr); align-items: center; gap: clamp(3rem, 7vw, 7.5rem); }
 .hero-copy { position: relative; z-index: 3; }
 .kicker { margin: 0 0 1.35rem; display: flex; align-items: center; gap: .62rem; color: var(--slate); font-size: .68rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
 .kicker > span { width: .48rem; height: .48rem; border-radius: 50%; background: var(--cobalt); box-shadow: 0 0 0 .32rem rgba(79,102,255,.11); }
@@ -92,6 +92,7 @@ em { font-style: italic; }
 .model-picker.is-active { background: var(--cobalt); color: var(--white); box-shadow: 0 8px 20px rgba(79,102,255,.26); }
 
 .catalog { padding-bottom: clamp(7rem, 12vw, 12rem); }
+.catalog, .process { scroll-margin-top: 6rem; }
 .section-heading { margin-bottom: clamp(2.5rem, 6vw, 5rem); display: grid; grid-template-columns: minmax(0,1.25fr) minmax(16rem,.75fr); align-items: end; gap: 3rem; }
 .section-heading h2, .assurances h2, .process h2, .contact h2 { margin: 0; font-size: clamp(2.9rem, 5.3vw, 5.4rem); font-weight: 800; line-height: .98; letter-spacing: -.066em; }
 .section-heading h2 em, .assurances h2 em, .process h2 em, .contact h2 em { color: var(--cobalt); font-weight: 700; }
