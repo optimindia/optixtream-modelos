@@ -111,7 +111,7 @@ if (existsSync(indexPath)) {
     ['class="assurance-grid"', 'Catalog is missing the assurance section'],
     ['class="process-grid"', 'Catalog is missing the selection process'],
     ['aria-live="polite"', 'Showcase changes are not announced'],
-    ['Plus Jakarta Sans', 'Catalog is missing the approved typography']
+    ['Plus+Jakarta+Sans', 'Catalog is missing the approved typography']
   ];
   for (const [needle, message] of showroomRequirements) {
     if (!index.includes(needle)) fail(message);

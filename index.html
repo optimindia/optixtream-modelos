@@ -3,107 +3,185 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0c0f">
-  <meta name="description" content="Catálogo público de modelos web OptiXtream. Once experiencias listas para explorar en escritorio y celular.">
-  <title>OptiXtream — Catálogo de modelos</title>
+  <meta name="theme-color" content="#F5F5F7">
+  <meta name="description" content="Explorá once modelos web OptiXtream, comparalos y elegí el estilo ideal para tu experiencia de streaming.">
+  <title>OptiXtream — Elegí tu modelo</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..125,300..800&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#modelos">Ir a los modelos</a>
+
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="OptiXtream, inicio">
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
-      <span>OptiXtream</span>
-    </a>
-    <nav aria-label="Navegación principal">
-      <a href="#modelos">Modelos</a>
-      <a class="nav-contact" href="https://wa.me/5492616027055?text=Hola%2C%20quiero%20consultar%20por%20un%20modelo%20de%20OptiXtream" target="_blank" rel="noopener">Consultar <span aria-hidden="true">↗</span></a>
-    </nav>
+    <div class="nav-shell">
+      <a class="brand" href="#inicio" aria-label="OptiXtream, inicio">
+        <span class="brand-symbol" aria-hidden="true">OX</span>
+        <span>OptiXtream</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#modelos">Modelos</a>
+        <a href="#como-elegir">Cómo elegir</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5492616027055?text=Hola%2C%20quiero%20consultar%20por%20un%20modelo%20de%20OptiXtream" target="_blank" rel="noopener">Consultar <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main id="inicio">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-kicker"><span>Catálogo público</span><span>Edición 2026</span></div>
-      <h1 id="hero-title"><span>Once maneras</span><em>de mirar.</em></h1>
-      <div class="hero-foot">
-        <p>Una colección de experiencias visuales para streaming. Cada modelo tiene su propio lenguaje, su propio ritmo y una versión móvil cuidada.</p>
-        <a href="#modelos">Ver la colección <span aria-hidden="true">↓</span></a>
+    <section class="hero page-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker"><span></span> Catálogo OptiXtream · 11 modelos</p>
+        <h1 id="hero-title">Tu próxima web<br><em>empieza acá.</em></h1>
+        <p class="hero-lead">Explorá experiencias completas, compará estilos y abrí cada modelo en su propia pantalla.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="#modelos">Explorar modelos <span aria-hidden="true">↓</span></a>
+          <a class="button button--quiet" href="modelo-11/">Ver selección <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-proof" aria-label="Características del catálogo">
+          <span>11 diseños únicos</span>
+          <span>Responsive real</span>
+          <span>Listos para explorar</span>
+        </div>
+      </div>
+
+      <div class="showcase-wrap">
+        <div class="showcase-orbit" aria-hidden="true"></div>
+        <div class="showcase-stage" aria-live="polite">
+          <div class="stage-layer stage-layer--back"><img src="previews/modelo-05.png" alt="" aria-hidden="true" width="1440" height="1000"></div>
+          <div class="stage-layer stage-layer--middle"><img src="previews/modelo-09.png" alt="" aria-hidden="true" width="1440" height="1000"></div>
+          <a class="stage-screen" id="stage-link" href="modelo-11/" aria-label="Abrir modelo 11, Motivo">
+            <span class="screen-chrome" aria-hidden="true"><i></i><i></i><i></i><b>optixtream / modelo-11</b></span>
+            <img id="stage-image" src="previews/modelo-11.png" alt="Vista previa del modelo 11 Motivo" width="1440" height="1000">
+          </a>
+          <div class="stage-caption">
+            <span class="stage-number" id="stage-number">11</span>
+            <span class="stage-copy"><strong id="stage-title">Motivo</strong><small id="stage-note">Gran espectáculo</small></span>
+            <span class="stage-open" aria-hidden="true">↗</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="catalog" id="modelos" aria-labelledby="catalog-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">La colección completa</p>
-          <h2 id="catalog-title">Elegí por<br><i>sensación.</i></h2>
-        </div>
-        <p class="catalog-note">Abrí cualquier modelo para recorrerlo completo. Todos funcionan como sitios independientes.</p>
+    <section class="quick-select page-shell" aria-labelledby="quick-title">
+      <div class="quick-copy">
+        <span>Vista rápida</span>
+        <strong id="quick-title">Probá cada estilo</strong>
       </div>
+      <div class="picker-scroll">
+        <div class="picker-row" aria-label="Cambiar modelo destacado">
+          <button class="model-picker" type="button" data-pick="01" aria-pressed="false" aria-label="Mostrar modelo 01">01</button>
+          <button class="model-picker" type="button" data-pick="02" aria-pressed="false" aria-label="Mostrar modelo 02">02</button>
+          <button class="model-picker" type="button" data-pick="03" aria-pressed="false" aria-label="Mostrar modelo 03">03</button>
+          <button class="model-picker" type="button" data-pick="04" aria-pressed="false" aria-label="Mostrar modelo 04">04</button>
+          <button class="model-picker" type="button" data-pick="05" aria-pressed="false" aria-label="Mostrar modelo 05">05</button>
+          <button class="model-picker" type="button" data-pick="06" aria-pressed="false" aria-label="Mostrar modelo 06">06</button>
+          <button class="model-picker" type="button" data-pick="07" aria-pressed="false" aria-label="Mostrar modelo 07">07</button>
+          <button class="model-picker" type="button" data-pick="08" aria-pressed="false" aria-label="Mostrar modelo 08">08</button>
+          <button class="model-picker" type="button" data-pick="09" aria-pressed="false" aria-label="Mostrar modelo 09">09</button>
+          <button class="model-picker" type="button" data-pick="10" aria-pressed="false" aria-label="Mostrar modelo 10">10</button>
+          <button class="model-picker is-active" type="button" data-pick="11" aria-pressed="true" aria-label="Mostrar modelo 11">11</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog page-shell" id="modelos" aria-labelledby="catalog-title">
+      <header class="section-heading" data-reveal>
+        <div>
+          <p class="kicker"><span></span> La colección completa</p>
+          <h2 id="catalog-title">Un modelo para<br><em>cada manera de vender.</em></h2>
+        </div>
+        <p>Entrá, recorré y compará. Cada propuesta es un sitio real, completo e independiente.</p>
+      </header>
 
       <div class="model-grid">
-        <a class="model-card" data-model="01" href="modelo-01/" aria-label="Abrir modelo 01, Nocturna">
-          <figure><img src="previews/modelo-01.png" alt="Vista previa del modelo Nocturna" width="1440" height="1000" loading="eager"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">01</span><h3>Nocturna</h3><p>Cine oscuro</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="01" href="modelo-01/" data-reveal style="--accent:#D8B45A">
+          <figure><img src="previews/modelo-01.png" alt="Vista previa del modelo 01 Nocturna" width="1440" height="1000" loading="lazy"><span class="card-badge">Cinemático</span></figure>
+          <div class="card-copy"><span>Modelo 01</span><h3>Nocturna</h3><p>Cine oscuro</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="02" href="modelo-02/" aria-label="Abrir modelo 02, Prisma">
-          <figure><img src="previews/modelo-02.png" alt="Vista previa del modelo Prisma" width="1440" height="1000" loading="eager"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">02</span><h3>Prisma</h3><p>Color eléctrico</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="02" href="modelo-02/" data-reveal style="--accent:#8A63FF">
+          <figure><img src="previews/modelo-02.png" alt="Vista previa del modelo 02 Prisma" width="1440" height="1000" loading="lazy"><span class="card-badge">Eléctrico</span></figure>
+          <div class="card-copy"><span>Modelo 02</span><h3>Prisma</h3><p>Color eléctrico</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="03" href="modelo-03/" aria-label="Abrir modelo 03, Éter">
-          <figure><img src="previews/modelo-03.png" alt="Vista previa del modelo Éter" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">03</span><h3>Éter</h3><p>Editorial de lujo</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="03" href="modelo-03/" data-reveal style="--accent:#B99472">
+          <figure><img src="previews/modelo-03.png" alt="Vista previa del modelo 03 Éter" width="1440" height="1000" loading="lazy"><span class="card-badge">Editorial</span></figure>
+          <div class="card-copy"><span>Modelo 03</span><h3>Éter</h3><p>Editorial de lujo</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="04" href="modelo-04/" aria-label="Abrir modelo 04, Órbita">
-          <figure><img src="previews/modelo-04.png" alt="Vista previa del modelo Órbita" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">04</span><h3>Órbita</h3><p>Futuro amable</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="04" href="modelo-04/" data-reveal style="--accent:#FF8A72">
+          <figure><img src="previews/modelo-04.png" alt="Vista previa del modelo 04 Órbita" width="1440" height="1000" loading="lazy"><span class="card-badge">Optimista</span></figure>
+          <div class="card-copy"><span>Modelo 04</span><h3>Órbita</h3><p>Futuro amable</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="05" href="modelo-05/" aria-label="Abrir modelo 05, Multivisión">
-          <figure><img src="previews/modelo-05.png" alt="Vista previa del modelo Multivisión" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">05</span><h3>Multivisión</h3><p>Control total</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="05" href="modelo-05/" data-reveal style="--accent:#5A8CFF">
+          <figure><img src="previews/modelo-05.png" alt="Vista previa del modelo 05 Multivisión" width="1440" height="1000" loading="lazy"><span class="card-badge">Inmersivo</span></figure>
+          <div class="card-copy"><span>Modelo 05</span><h3>Multivisión</h3><p>Control total</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="06" href="modelo-06/" aria-label="Abrir modelo 06, Pulso">
-          <figure><img src="previews/modelo-06.png" alt="Vista previa del modelo Pulso" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">06</span><h3>Pulso</h3><p>Broadcast directo</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="06" href="modelo-06/" data-reveal style="--accent:#FF775F">
+          <figure><img src="previews/modelo-06.png" alt="Vista previa del modelo 06 Pulso" width="1440" height="1000" loading="lazy"><span class="card-badge">En vivo</span></figure>
+          <div class="card-copy"><span>Modelo 06</span><h3>Pulso</h3><p>Broadcast directo</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="07" href="modelo-07/" aria-label="Abrir modelo 07, El Dial">
-          <figure><img src="previews/modelo-07.png" alt="Vista previa del modelo El Dial" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">07</span><h3>El Dial</h3><p>Calma analógica</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="07" href="modelo-07/" data-reveal style="--accent:#D98F66">
+          <figure><img src="previews/modelo-07.png" alt="Vista previa del modelo 07 El Dial" width="1440" height="1000" loading="lazy"><span class="card-badge">Orgánico</span></figure>
+          <div class="card-copy"><span>Modelo 07</span><h3>El Dial</h3><p>Calma analógica</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="08" href="modelo-08/" aria-label="Abrir modelo 08, Uplink">
-          <figure><img src="previews/modelo-08.png" alt="Vista previa del modelo Uplink" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">08</span><h3>Uplink</h3><p>Señal orbital</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="08" href="modelo-08/" data-reveal style="--accent:#69B7FF">
+          <figure><img src="previews/modelo-08.png" alt="Vista previa del modelo 08 Uplink" width="1440" height="1000" loading="lazy"><span class="card-badge">Nocturno</span></figure>
+          <div class="card-copy"><span>Modelo 08</span><h3>Uplink</h3><p>Señal orbital</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="09" href="modelo-09/" aria-label="Abrir modelo 09, Zapping">
-          <figure><img src="previews/modelo-09.png" alt="Vista previa del modelo Zapping" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">09</span><h3>Zapping</h3><p>Pop geométrico</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="09" href="modelo-09/" data-reveal style="--accent:#F2C94C">
+          <figure><img src="previews/modelo-09.png" alt="Vista previa del modelo 09 Zapping" width="1440" height="1000" loading="lazy"><span class="card-badge">Pop</span></figure>
+          <div class="card-copy"><span>Modelo 09</span><h3>Zapping</h3><p>Pop geométrico</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card" data-model="10" href="modelo-10/" aria-label="Abrir modelo 10, Butaca">
-          <figure><img src="previews/modelo-10.png" alt="Vista previa del modelo Butaca" width="1440" height="1000" loading="lazy"><span class="playhead"></span></figure>
-          <div class="card-meta"><span class="model-number">10</span><h3>Butaca</h3><p>Cartelera moderna</p><span class="open-mark">↗</span></div>
+        <a class="model-card" data-model="10" href="modelo-10/" data-reveal style="--accent:#7D8CFF">
+          <figure><img src="previews/modelo-10.png" alt="Vista previa del modelo 10 Butaca" width="1440" height="1000" loading="lazy"><span class="card-badge">Cartelera</span></figure>
+          <div class="card-copy"><span>Modelo 10</span><h3>Butaca</h3><p>Cartelera moderna</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
-        <a class="model-card model-card--feature" data-model="11" href="modelo-11/" aria-label="Abrir modelo 11, Motivo">
-          <figure><img src="previews/modelo-11.png" alt="Vista previa del modelo Motivo" width="1440" height="1000" loading="lazy"><span class="playhead"></span><span class="featured-label">Selección OptiXtream</span></figure>
-          <div class="card-meta"><span class="model-number">11</span><h3>Motivo</h3><p>Gran espectáculo</p><span class="open-mark">↗</span></div>
+        <a class="model-card model-card--featured" data-model="11" href="modelo-11/" data-reveal style="--accent:#FF3547">
+          <figure><img src="previews/modelo-11.png" alt="Vista previa del modelo 11 Motivo" width="1440" height="1000" loading="lazy"><span class="card-badge card-badge--featured">Selección OptiXtream</span></figure>
+          <div class="card-copy"><span>Modelo 11</span><h3>Motivo</h3><p>Gran espectáculo</p><span class="card-action">Explorar modelo <b>↗</b></span></div>
         </a>
       </div>
     </section>
 
-    <section class="contact" aria-labelledby="contact-title">
-      <p class="eyebrow">¿Ya viste el indicado?</p>
-      <h2 id="contact-title">Hagámoslo<br><i>tuyo.</i></h2>
-      <a href="https://wa.me/5492616027055?text=Hola%2C%20ya%20eleg%C3%AD%20un%20modelo%20de%20OptiXtream" target="_blank" rel="noopener">Hablar por WhatsApp <span aria-hidden="true">↗</span></a>
+    <section class="assurances page-shell" aria-labelledby="assurance-title">
+      <header data-reveal>
+        <p class="kicker"><span></span> Bien pensado de punta a punta</p>
+        <h2 id="assurance-title">No son capturas.<br><em>Son sitios completos.</em></h2>
+      </header>
+      <div class="assurance-grid">
+        <article data-reveal><span class="assurance-icon" aria-hidden="true">↔</span><h3>Responsive real</h3><p>Cada experiencia se adapta a escritorio, tablet y celular sin perder su identidad.</p></article>
+        <article data-reveal><span class="assurance-icon" aria-hidden="true">⌘</span><h3>Cada modelo es independiente</h3><p>Entrá y recorré cada propuesta en su propia ruta, como un sitio terminado.</p></article>
+        <article data-reveal><span class="assurance-icon" aria-hidden="true">✦</span><h3>Listo para personalizar</h3><p>Elegís la base y después adaptamos marca, contenido, colores y llamadas a la acción.</p></article>
+      </div>
+    </section>
+
+    <section class="process" id="como-elegir" aria-labelledby="process-title">
+      <div class="page-shell process-shell">
+        <header data-reveal>
+          <p class="kicker kicker--light"><span></span> Simple de elegir</p>
+          <h2 id="process-title">Encontrá el indicado<br><em>en tres pasos.</em></h2>
+        </header>
+        <div class="process-grid">
+          <article data-reveal><span>01</span><div><h3>Mirá</h3><p>Recorré los modelos completos y sentí cuál representa mejor tu propuesta.</p></div></article>
+          <article data-reveal><span>02</span><div><h3>Compará</h3><p>Revisá jerarquía, colores, movimiento y cómo responde cada uno en celular.</p></div></article>
+          <article data-reveal><span>03</span><div><h3>Consultá</h3><p>Decinos qué modelo elegiste y lo convertimos en una experiencia propia.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact page-shell" aria-labelledby="contact-title" data-reveal>
+      <div class="contact-glow" aria-hidden="true"></div>
+      <p>Tu modelo está acá.</p>
+      <h2 id="contact-title">¿Encontraste<br><em>el indicado?</em></h2>
+      <a class="button button--contact" href="https://wa.me/5492616027055?text=Hola%2C%20ya%20eleg%C3%AD%20un%20modelo%20de%20OptiXtream" target="_blank" rel="noopener">Hablar por WhatsApp <span aria-hidden="true">↗</span></a>
     </section>
   </main>
 
-  <footer>
-    <a class="brand brand--footer" href="#inicio"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span>OptiXtream</span></a>
-    <p>Modelos web para experiencias de streaming.</p>
-    <p>© <span id="year">2026</span> OptiXtream</p>
+  <footer class="page-shell">
+    <a class="brand" href="#inicio"><span class="brand-symbol" aria-hidden="true">OX</span><span>OptiXtream</span></a>
+    <p>Once maneras de empezar algo propio.</p>
+    <span>© <span id="year">2026</span> OptiXtream</span>
   </footer>
 </body>
 </html>
