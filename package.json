@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/validate-site.mjs",
+    "test": "node tests/image-fallbacks.test.mjs && node tests/validate-site.mjs",
     "migrate": "node scripts/migrate-models.mjs"
   }
 }

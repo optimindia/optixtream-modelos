@@ -1,0 +1,690 @@
+/* ==========================================================================
+   OptiXtream — Modelo 07 · "El Dial" (Orgánico Terroso)
+   Sobrescribe theme.css con la dirección del proyecto: cálido, táctil,
+   tarde de sillón. Firma: dial de sintonizador vintage que gira y resalta
+   Series · Cine · Deportes · Kids al pasar por la marca fija (12 en punto).
+   ========================================================================== */
+
+:root {
+  --bg: #EAE1D0;
+  --bg-1: #F4EEE1;
+  --bg-2: #E0D4BC;
+  --bg-dark: #241F16;
+  --surface: rgba(44, 36, 24, 0.04);
+  --surface-2: rgba(44, 36, 24, 0.07);
+
+  --accent: #B15C3C;
+  --accent-soft: #C97B5A;
+  --accent-2: #4B5A43;
+  --accent-2-deep: #333E2E;
+
+  --text: #2C2418;
+  --text-2: #6B5D48;
+  --text-3: #948468;
+  --border: rgba(177, 92, 60, 0.22);
+  --ink: #FBF6EC;
+
+  --grad-brand: linear-gradient(100deg, var(--accent), var(--accent-2));
+  --grad-text: linear-gradient(100deg, var(--accent-soft), var(--accent) 45%, var(--accent-2-deep));
+
+  --ff-display: 'Gambetta', 'Iowan Old Style', Georgia, serif;
+  --ff-body: 'Supreme', system-ui, -apple-system, sans-serif;
+
+  --radius: 20px;
+  --radius-lg: 28px;
+  --shadow-accent: 0 20px 44px -16px rgba(177, 92, 60, 0.48);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 { text-wrap: balance; }
+img { height: auto; }
+a { text-decoration: none; }
+
+::selection { background: var(--accent); color: var(--ink); }
+
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 999px; border: 3px solid var(--bg-1); }
+
+/* --------------------------------------------------------------------------
+   Accesibilidad
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 999;
+  background: var(--accent-2-deep);
+  color: var(--ink);
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: top 0.3s var(--ease);
+}
+.skip-link:focus { top: 1rem; }
+
+/* --------------------------------------------------------------------------
+   Botón — variante cálida (corrige sombras cian del kit base)
+   -------------------------------------------------------------------------- */
+.btn { font-weight: 600; border-radius: var(--radius); }
+.btn-dial {
+  box-shadow: 0 16px 32px -16px rgba(177, 92, 60, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.btn-small { padding: 0.65rem 1.35rem; font-size: 0.86rem; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent-2-deep);
+  box-shadow: inset 0 0 0 1.5px var(--border);
+}
+.btn-outline:hover { background: var(--surface-2); box-shadow: inset 0 0 0 1.5px var(--accent); }
+
+/* --------------------------------------------------------------------------
+   Nav sticky
+   -------------------------------------------------------------------------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--bg-1) 82%, transparent);
+  backdrop-filter: blur(16px) saturate(130%);
+  border-bottom: 1px solid transparent;
+  transform: translateY(-102%);
+  transition: transform 0.55s var(--ease), border-color 0.55s;
+}
+.nav.show { transform: none; border-bottom-color: var(--border); }
+.nav-brand {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.nav-brand span { color: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   Utilidades de sección
+   -------------------------------------------------------------------------- */
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+.container.narrow { max-width: 760px; }
+.center { text-align: center; }
+p.center.u-eyebrow, .u-eyebrow.center { justify-content: center; }
+.max-prose { max-width: 58ch; margin-left: auto; margin-right: auto; }
+
+.section { padding: clamp(4.5rem, 8vw, 7.5rem) 0; position: relative; }
+.section-title {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0.6rem 0 1.2rem;
+}
+.section-body { color: var(--text-2); font-size: 1.05rem; line-height: 1.75; margin: 0; }
+.section-note { margin-top: 1.5rem; color: var(--text-3); font-size: 0.92rem; line-height: 1.6; }
+
+/* Ritmo de fondo entre secciones */
+.section-contenido { background: var(--bg); }
+.section-plataformas { background: var(--bg-1); }
+.section-click { background: var(--bg-dark); }
+.section-vip { background: var(--bg-2); }
+.section-precios { background: var(--bg); }
+.section-confianza { background: var(--bg-1); }
+.section-faq { background: var(--bg); }
+
+/* Split texto + imagen */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4.5rem); align-items: center; }
+.split-reverse { direction: rtl; }
+.split-reverse > * { direction: ltr; }
+.split-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 32px 60px -30px rgba(44, 36, 24, 0.4);
+}
+.split-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(251, 246, 236, 0.22);
+  pointer-events: none;
+}
+.split-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; display: block; }
+
+@media (max-width: 860px) {
+  .split { grid-template-columns: 1fr; }
+  .split-reverse { direction: ltr; }
+  .split-reverse .split-media { order: -1; }
+}
+
+/* Fila de stats */
+.stat-row { display: flex; gap: clamp(1.4rem, 4vw, 2.6rem); list-style: none; margin: 1.9rem 0 0; padding: 0; flex-wrap: wrap; }
+.stat-num {
+  display: block;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.1rem);
+  color: var(--accent-2-deep);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label { display: block; margin-top: 0.3rem; font-size: 0.82rem; color: var(--text-3); letter-spacing: 0.03em; }
+
+/* ==========================================================================
+   HERO + firma "El Dial"
+   ========================================================================== */
+.hero {
+  min-height: 100dvh;
+  padding: 8rem 1.5rem 5rem;
+  background:
+    radial-gradient(120% 90% at 16% -12%, rgba(201, 150, 110, 0.4), transparent 55%),
+    radial-gradient(90% 70% at 88% 6%, rgba(107, 112, 80, 0.18), transparent 60%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg) 55%, var(--bg-2) 100%);
+}
+.hero::before {
+  background: radial-gradient(130% 120% at 50% 46%, transparent 55%, rgba(44, 36, 24, 0.12) 100%);
+}
+.hero-field {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+  background: radial-gradient(48% 38% at 50% 6%, rgba(251, 246, 236, 0.55), transparent 72%);
+}
+
+.hero-inner--dial {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  text-align: left;
+  max-width: 1120px;
+}
+.hero-copy { max-width: 640px; }
+.hero-title {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 1.5rem + 4.4vw, 4.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+.hero-sub {
+  margin-top: 1.6rem;
+  max-width: 52ch;
+  color: var(--text-2);
+  font-size: clamp(1.02rem, 0.94rem + 0.4vw, 1.18rem);
+  line-height: 1.75;
+}
+.hero-actions { margin-top: 2.3rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+.hero-note { color: var(--text-2); font-size: 0.88rem; }
+
+.u-anim-rise.d1 { animation-delay: 0.15s; }
+.u-anim-title.d2 { animation-delay: 0.32s; }
+.u-anim-rise.d3 { animation-delay: 0.55s; }
+.u-anim-rise.d4 { animation-delay: 0.72s; }
+
+@media (max-width: 860px) {
+  .hero-inner--dial { grid-template-columns: 1fr; text-align: center; }
+  .hero-copy { max-width: 560px; margin: 0 auto; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { align-items: center; }
+  .dial-stage { order: -1; margin-bottom: 0.5rem; }
+}
+
+/* --- El Dial: perilla orgánica + marcas que sintonizan al pasar por las 12 --- */
+.dial-stage { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+
+.dial {
+  position: relative;
+  width: clamp(230px, 25vw, 330px);
+  aspect-ratio: 1;
+  --dial-r: clamp(94px, 13vw, 138px);
+}
+
+.dial-indicator {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 11px solid var(--text);
+  filter: drop-shadow(0 3px 4px rgba(44, 36, 24, 0.4));
+  z-index: 3;
+}
+
+.dial-rotor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: dial-spin 48s linear infinite;
+}
+
+@keyframes dial-spin { to { transform: rotate(360deg); } }
+
+.dial-blob {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 22px 30px rgba(44, 36, 24, 0.3)) drop-shadow(0 8px 12px rgba(44, 36, 24, 0.22));
+}
+
+.dial-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--n)) translateY(calc(-1 * var(--r)));
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  opacity: 0.55;
+  white-space: nowrap;
+  animation-name: dial-tune;
+  animation-duration: 48s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dial-tune {
+  0% {
+    opacity: 1;
+    color: var(--accent-2-deep);
+    transform: translate(-50%, -50%) rotate(var(--n)) translateY(calc(-1 * var(--r))) scale(1.16);
+  }
+  9%, 100% {
+    opacity: 0.55;
+    color: var(--text-3);
+    transform: translate(-50%, -50%) rotate(var(--n)) translateY(calc(-1 * var(--r))) scale(1);
+  }
+}
+
+.dial-caption {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ==========================================================================
+   MARQUEE DE PLATAFORMAS
+   ========================================================================== */
+.marquee {
+  margin-top: 3rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0 1.5rem;
+  animation: marquee-scroll 30s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track li {
+  font-family: var(--ff-display);
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+  font-weight: 500;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+@keyframes marquee-scroll { to { transform: translateX(-50%); } }
+
+/* ==========================================================================
+   TODO A UN CLICK (sección oscura, contraste café)
+   ========================================================================== */
+.section-click .u-eyebrow { color: rgba(251, 246, 236, 0.85); }
+.section-click .section-title { color: var(--ink); }
+.section-click .section-body { color: rgba(251, 246, 236, 0.72); }
+.click-actions { display: flex; justify-content: center; margin-top: 2.3rem; }
+
+/* Sobre fondos oscuros, el degradado de acento no puede terminar en el tono
+   oliva profundo (se funde con el café de fondo) — se acota a tonos cálidos claros. */
+.section-click .u-accent-text,
+.moment-copy .u-accent-text {
+  background: linear-gradient(100deg, var(--accent-soft), #E7A67C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   MOMENTO INTERSTICIAL
+   ========================================================================== */
+.section-moment {
+  position: relative;
+  height: 54vh;
+  min-height: 380px;
+  max-height: 600px;
+  padding: 0;
+  overflow: hidden;
+}
+.moment-media { position: absolute; inset: 0; }
+.moment-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.moment-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 70% at 50% 48%, rgba(36, 31, 22, 0.62), transparent 72%),
+    linear-gradient(180deg, rgba(36, 31, 22, 0.38) 0%, rgba(36, 31, 22, 0.5) 55%, rgba(36, 31, 22, 0.82) 100%);
+}
+.moment-copy {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.moment-copy .u-eyebrow { color: rgba(251, 246, 236, 0.85); text-shadow: 0 2px 16px rgba(20, 16, 10, 0.5); }
+.moment-title {
+  margin-top: 0.7rem;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
+  line-height: 1.1;
+  color: #FBF6EC;
+  max-width: 20ch;
+  text-shadow: 0 4px 24px rgba(20, 16, 10, 0.55);
+}
+
+/* Ticket VIP — panel de papel, sin foto, con muescas troqueladas */
+.vip-ticket {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.6rem 2.2rem;
+  box-shadow: 0 32px 56px -30px rgba(44, 36, 24, 0.42);
+  transform: rotate(-1.3deg);
+}
+.ticket-top { text-align: center; }
+.ticket-eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+.ticket-title {
+  margin-top: 0.35rem;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  color: var(--accent-2-deep);
+}
+.ticket-divider {
+  position: relative;
+  height: 0;
+  margin: 1.7rem -2.2rem;
+  border-top: 2px dashed var(--border);
+}
+.ticket-divider::before,
+.ticket-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  background: var(--bg-2);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.ticket-divider::before { left: -13px; }
+.ticket-divider::after { right: -13px; }
+.ticket-specs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem 1.2rem; }
+.ticket-specs li { position: relative; padding-left: 1.3rem; font-size: 0.94rem; color: var(--text-2); }
+.ticket-specs li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+.ticket-foot { text-align: center; font-size: 0.82rem; letter-spacing: 0.03em; color: var(--text-3); }
+
+/* ==========================================================================
+   PRECIOS
+   ========================================================================== */
+.pricing-grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.3rem 1.9rem;
+  box-shadow: 0 22px 42px -28px rgba(44, 36, 24, 0.35);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: 0 28px 52px -24px rgba(44, 36, 24, 0.4); }
+
+.price-card--featured {
+  background: linear-gradient(165deg, var(--accent-2-deep), #202a1c);
+  border-color: transparent;
+  color: var(--ink);
+  transform: scale(1.03);
+}
+.price-card--featured:hover { transform: scale(1.03) translateY(-6px); }
+.price-card--featured .price-plan,
+.price-card--featured .price-features li { color: rgba(251, 246, 236, 0.86); }
+.price-card--featured .price-tag { color: #FBF6EC; }
+.price-card--featured .price-features li::before { background: var(--accent-soft); }
+
+.price-ribbon {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.42rem 1.05rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 18px -6px rgba(44, 36, 24, 0.45);
+  white-space: nowrap;
+}
+
+.price-plan { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
+.price-tag {
+  margin: 0.6rem 0 1.5rem;
+  font-family: var(--ff-display);
+  font-weight: 600;
+  color: var(--accent-2-deep);
+  font-variant-numeric: tabular-nums;
+}
+.price-currency { font-size: 1.2rem; vertical-align: 0.5em; }
+.price-num { font-size: 2.5rem; }
+
+.price-features { list-style: none; margin: 0 0 1.9rem; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.price-features li { position: relative; padding-left: 1.4rem; color: var(--text-2); font-size: 0.92rem; }
+.price-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+
+/* ==========================================================================
+   CONFIANZA
+   ========================================================================== */
+.trust-grid { display: grid; gap: 2.4rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); text-align: center; }
+.trust-item { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+.trust-icon { width: 32px; height: 32px; color: var(--accent); }
+.trust-title { font-family: var(--ff-display); font-weight: 600; font-size: 1.05rem; }
+.trust-text { color: var(--text-2); font-size: 0.92rem; max-width: 26ch; }
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq-list { margin-top: 2.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
+.faq {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.25rem 1.6rem;
+  overflow: hidden;
+}
+.faq summary {
+  cursor: pointer;
+  padding: 1.3rem 0;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform 0.3s var(--ease);
+  flex-shrink: 0;
+}
+.faq[open] summary::after { transform: rotate(45deg); }
+.faq-body { padding-bottom: 1.6rem; color: var(--text-2); line-height: 1.75; }
+.faq-body p { margin: 0; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer { background: var(--bg-dark); color: var(--ink); padding: clamp(4.5rem, 9vw, 7rem) 1.5rem 3rem; text-align: center; }
+.footer-cta {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 1.2rem + 3vw, 3.2rem);
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+  margin: 0 auto 2rem;
+}
+.footer-links { display: flex; justify-content: center; gap: 1.7rem; margin-top: 2.6rem; flex-wrap: wrap; }
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(251, 246, 236, 0.85);
+  font-size: 0.95rem;
+  padding: 0.5rem 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+.footer-links a:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+.footer-links svg { width: 20px; height: 20px; }
+.footer-hours { margin-top: 2.1rem; color: rgba(251, 246, 236, 0.55); font-size: 0.88rem; }
+.footer-copy { margin-top: 0.5rem; color: rgba(251, 246, 236, 0.4); font-size: 0.82rem; }
+
+/* ==========================================================================
+   Responsive extra
+   ========================================================================== */
+@media (max-width: 560px) {
+  .section { padding: 4rem 0; }
+  .hero { padding-top: 7rem; }
+  .price-card--featured { transform: none; }
+  .price-card--featured:hover { transform: translateY(-6px); }
+}
+
+/* ========================================================================== 
+   CINEMA PASS — luz de tarde, lente cálida y escena doméstica
+   ========================================================================== */
+.hero-inner--dial::before {
+  content: '';
+  position: absolute;
+  width: min(760px,72vw);
+  height: min(760px,72vw);
+  right: -18%;
+  top: 42%;
+  z-index: -1;
+  transform: translateY(-50%);
+  border-radius: 48% 52% 44% 56%;
+  background: radial-gradient(circle at 42% 38%, rgba(255,248,222,.78), rgba(210,125,88,.14) 42%, rgba(83,98,75,.06) 62%, transparent 74%);
+  filter: blur(12px);
+  animation: m07-window-light 8s ease-in-out infinite alternate;
+}
+.hero-copy { position: relative; }
+.hero-copy::after { content: ''; position: absolute; left: 0; bottom: -2.5rem; width: min(420px,80%); height: 1px; background: linear-gradient(90deg, var(--accent), transparent); opacity: .35; }
+.dial-stage { filter: drop-shadow(0 35px 42px rgba(48,39,27,.14)); }
+.dial-caption { padding: .5rem 1rem; border: 1px solid rgba(83,98,75,.14); border-radius: 999px; background: rgba(243,236,217,.46); backdrop-filter: blur(8px); }
+.section-moment { box-shadow: inset 0 80px 100px -120px rgba(48,39,27,.48); }
+
+@keyframes m07-window-light { from { transform: translateY(-50%) scale(.94) rotate(-2deg); opacity: .72; } to { transform: translateY(-50%) scale(1.05) rotate(2deg); opacity: 1; } }
+@media (max-width: 860px) { .hero-inner--dial::before { right: 50%; transform: translate(50%,-50%); top: 25%; width: 90vw; height: 90vw; } }
+@media (prefers-reduced-motion: reduce) { .hero-inner--dial::before { animation: none !important; } }
+
+/* ========================================================================== 
+   POWER PASS 2026 — Living táctil / arcilla, oliva y papel
+   ========================================================================== */
+:root {
+  --bg: #E7DDC9;
+  --bg-1: #F3ECD9;
+  --bg-2: #D8C9AC;
+  --bg-dark: #26251C;
+  --accent: #B65437;
+  --accent-soft: #D27D58;
+  --accent-2: #53624B;
+  --accent-2-deep: #34412F;
+  --text: #30271B;
+  --text-2: #665944;
+  --text-3: #817258;
+  --border: rgba(83,98,75,.2);
+}
+
+body { background: linear-gradient(180deg, var(--bg), #E9E0CF); }
+.hero { background: radial-gradient(65% 55% at 18% -10%, rgba(210,125,88,.36), transparent 64%), radial-gradient(54% 52% at 86% 8%, rgba(83,98,75,.18), transparent 66%), linear-gradient(180deg, var(--bg-1), var(--bg)); }
+.hero-field { opacity: 1; background: radial-gradient(46% 36% at 50% 4%, rgba(255,250,238,.68), transparent 74%); }
+.hero-title { text-shadow: 0 12px 34px rgba(48,39,27,.09); }
+.dial { filter: saturate(108%) contrast(103%); }
+.dial::after { content: ''; position: absolute; inset: 13%; border: 1px dashed rgba(243,236,217,.38); border-radius: 46% 54% 58% 42%; pointer-events: none; z-index: 2; }
+.dial-blob { filter: drop-shadow(0 28px 34px rgba(48,39,27,.3)) drop-shadow(0 7px 9px rgba(48,39,27,.16)); }
+.btn-dial { border: 1px solid rgba(255,255,255,.25); box-shadow: 0 20px 42px -18px rgba(182,84,55,.62), inset 0 1px 0 rgba(255,255,255,.34); }
+.btn-dial:hover { transform: translateY(-4px); box-shadow: 0 28px 50px -18px rgba(83,98,75,.62); }
+.split-media { border: 8px solid rgba(243,236,217,.72); box-shadow: 0 24px 50px -30px rgba(48,39,27,.45); }
+.price-card { background: linear-gradient(160deg, rgba(255,250,238,.78), rgba(216,201,172,.45)); border-color: rgba(83,98,75,.18); }
+.price-card:hover { transform: translateY(-8px) rotate(-.4deg); box-shadow: 0 30px 54px -32px rgba(48,39,27,.42); }
+.faq { background: rgba(243,236,217,.58); box-shadow: inset 0 1px 0 rgba(255,255,255,.36); }
+
+@media (max-width: 560px) {
+  .hero-inner--dial { gap: 1.5rem; }
+  .dial { width: min(260px, 74vw); }
+}

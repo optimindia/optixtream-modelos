@@ -36,6 +36,7 @@ function localReferences(text) {
   return references.filter((value) =>
     value &&
     !value.startsWith('#') &&
+    !value.startsWith('%23') &&
     !value.startsWith('data:') &&
     !value.startsWith('mailto:') &&
     !value.startsWith('tel:') &&
@@ -86,7 +87,11 @@ for (const model of models) {
     if (/\.\.\//.test(text)) fail(`${model}/${name} contains a parent-directory reference`);
     if (/design[\\/]theme\.css/i.test(text)) fail(`${model}/${name} depends on workshop design files`);
     if (/images\.unsplash\.com/i.test(text)) fail(`${model}/${name} contains a remote Unsplash image`);
+    if (/binarios?(?:\s+xtream)?/i.test(text)) fail(`${model}/${name} contains the retired Binarios brand`);
     if (/[A-Z]:[\\/](?:Users|Windows|Program Files)/i.test(text)) fail(`${model}/${name} contains an absolute Windows path`);
+    if (model === 'modelo-01' && name === 'styles.css' && /html,\s*body,\s*main,[\s\S]*?width:\s*100vw/i.test(text)) {
+      fail('modelo-01/styles.css uses scrollbar-sensitive 100vw sizing on mobile');
+    }
     verifyReferences(file, text);
     if (extension(file) === '.html') verifyDuplicateIds(file, text);
   }
