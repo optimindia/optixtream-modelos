@@ -105,9 +105,32 @@ if (existsSync(indexPath)) {
   if (JSON.stringify(orderedCards) !== JSON.stringify(expected)) {
     fail(`Catalog model order must be ${expected.join(', ')}; received ${orderedCards.join(', ') || 'none'}`);
   }
+  const showroomRequirements = [
+    ['class="showcase-stage"', 'Catalog is missing the Apple showroom stage'],
+    ['class="model-picker"', 'Catalog is missing the quick model selector'],
+    ['class="assurance-grid"', 'Catalog is missing the assurance section'],
+    ['class="process-grid"', 'Catalog is missing the selection process'],
+    ['aria-live="polite"', 'Showcase changes are not announced'],
+    ['Plus Jakarta Sans', 'Catalog is missing the approved typography']
+  ];
+  for (const [needle, message] of showroomRequirements) {
+    if (!index.includes(needle)) fail(message);
+  }
+  const pickerModels = [...index.matchAll(/class="[^"]*\bmodel-picker\b[^"]*"[^>]+data-pick="(\d{2})"/g)].map((match) => match[1]);
+  if (JSON.stringify(pickerModels) !== JSON.stringify(expected)) {
+    fail(`Showcase picker order must be ${expected.join(', ')}; received ${pickerModels.join(', ') || 'none'}`);
+  }
   if (!index.includes('https://wa.me/5492616027055')) fail('Catalog is missing the OptiXtream WhatsApp destination');
   verifyReferences(indexPath, index);
   verifyDuplicateIds(indexPath, index);
+}
+
+const stylesPath = join(root, 'styles.css');
+if (existsSync(stylesPath)) {
+  const rootStyles = readFileSync(stylesPath, 'utf8');
+  for (const token of ['#F5F5F7', '#FFFFFF', '#111216', '#686A73', '#4F66FF', '#FF775F']) {
+    if (!rootStyles.toUpperCase().includes(token)) fail(`Catalog styles are missing token ${token}`);
+  }
 }
 
 const redirectsPath = join(root, '_redirects');
