@@ -28,6 +28,15 @@ assert.deepEqual(getModelState('12'), {
   alt: 'Vista previa del modelo 12 Aurora'
 });
 
-assert.throws(() => getModelState('13'), /Unknown showroom model: 13/);
+assert.deepEqual(getModelState('13'), {
+  id: '13',
+  title: 'Vértigo',
+  note: 'Señal cambiante',
+  href: 'modelo-13/',
+  src: 'previews/modelo-13.png',
+  alt: 'Vista previa del modelo 13 Vértigo'
+});
+
+assert.throws(() => getModelState('14'), /Unknown showroom model: 14/);
 
 console.log('Showroom state contract passed');
