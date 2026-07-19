@@ -9,7 +9,8 @@ const models = {
   '08': ['Uplink', 'Señal orbital'],
   '09': ['Zapping', 'Pop geométrico'],
   '10': ['Butaca', 'Cartelera moderna'],
-  '11': ['Motivo', 'Gran espectáculo']
+  '11': ['Motivo', 'Gran espectáculo'],
+  '12': ['Aurora', 'Señal nocturna']
 };
 
 export function getModelState(modelId) {
