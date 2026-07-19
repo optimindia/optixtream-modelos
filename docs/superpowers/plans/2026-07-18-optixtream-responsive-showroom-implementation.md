@@ -118,11 +118,11 @@ Las capas traseras se atenúan en tablet y desaparecen debajo de 620 px.
 
 Usar `300–400` en `.hero-lead`, `.section-heading > p`, metadatos y textos descriptivos. Reservar `700–800` para titulares, nombres de modelo y CTA. Reducir bold innecesario en etiquetas.
 
-- [ ] **Step 6: Verificar GREEN**
+- [ ] **Step 6: Verificar la corrección de composición**
 
 Run: `npm.cmd test`
 
-Expected: todos los contratos pasan, incluido `Responsive showroom contract passed`.
+Expected: el contrato responsive avanza hasta fallar únicamente en el temporizador de `180` ms, que pertenece a la tarea siguiente; los contratos anteriores permanecen verdes.
 
 - [ ] **Step 7: Commit de composición**
 
