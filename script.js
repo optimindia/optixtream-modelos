@@ -10,7 +10,8 @@ const models = {
   '09': ['Zapping', 'Pop geométrico'],
   '10': ['Butaca', 'Cartelera moderna'],
   '11': ['Motivo', 'Gran espectáculo'],
-  '12': ['Aurora', 'Señal nocturna']
+  '12': ['Aurora', 'Señal nocturna'],
+  '13': ['Vértigo', 'Señal cambiante']
 };
 
 export function getModelState(modelId) {
