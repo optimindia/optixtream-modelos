@@ -57,7 +57,7 @@ function initShowroom() {
       stageNote.textContent = state.note;
       if (stagePath) stagePath.textContent = `optixtream / modelo-${state.id}`;
       stageScreen.classList.remove('is-changing');
-    }, 150);
+    }, 180);
   }
 
   pickers.forEach((picker) => {

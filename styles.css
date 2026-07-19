@@ -65,7 +65,7 @@ em { font-style: italic; }
 .stage-layer--middle { width: 71%; aspect-ratio: 1.36; left: 0; bottom: 1.4rem; transform: rotate(-6deg) translate3d(-.5rem,0,-30px); }
 .stage-screen { position: absolute; z-index: 3; width: 88%; top: 9%; right: 1%; overflow: hidden; border: 1px solid rgba(255,255,255,.9); border-radius: var(--radius); background: var(--white); color: var(--graphite); text-decoration: none; box-shadow: 0 35px 90px rgba(28,33,65,.22), 0 10px 28px rgba(27,32,57,.12); transform: rotate(-1.25deg); transition: transform .5s cubic-bezier(.2,.75,.25,1), opacity .3s ease, filter .3s ease; }
 .stage-screen:hover { transform: rotate(0) translateY(-6px); }
-.stage-screen.is-changing { opacity: .58; filter: blur(3px); transform: rotate(-1.25deg) scale(.985); }
+.stage-screen.is-changing { opacity: .62; filter: blur(.6px); transform: rotate(-1.25deg) scale(.988); }
 .screen-chrome { height: 2.1rem; padding: 0 .8rem; display: flex; align-items: center; gap: .35rem; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
 .screen-chrome i { width: .42rem; height: .42rem; border-radius: 50%; background: #D8DAE2; }
 .screen-chrome i:first-child { background: var(--coral); }
@@ -156,8 +156,8 @@ footer .brand-symbol { width: 1.7rem; height: 1.7rem; }
 footer p { margin: 0; }
 footer > span { justify-self: end; }
 
-.motion-ready [data-reveal] { opacity: 0; transform: translateY(18px); filter: blur(5px); transition: opacity .58s ease, transform .58s cubic-bezier(.2,.75,.25,1), filter .58s ease; }
-.motion-ready [data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
+.motion-ready [data-reveal] { opacity: 0; transform: translateY(10px); transition: opacity .68s ease, transform .68s cubic-bezier(.2,.75,.25,1); }
+.motion-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 
 @media (max-width: 1079px) {
   .site-header nav { display: none; }
@@ -235,6 +235,14 @@ footer > span { justify-self: end; }
   .contact-glow { right: -13rem; }
   footer { grid-template-columns: 1fr auto; }
   footer p { display: none; }
+}
+
+@media (hover: none) {
+  .button:hover,
+  .nav-cta:hover,
+  .model-card:hover,
+  .stage-screen:hover { transform: none; }
+  .model-card:hover figure img { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
