@@ -37,6 +37,15 @@ assert.deepEqual(getModelState('13'), {
   alt: 'Vista previa del modelo 13 Vértigo'
 });
 
-assert.throws(() => getModelState('14'), /Unknown showroom model: 14/);
+assert.deepEqual(getModelState('14'), {
+  id: '14',
+  title: 'Orbital Pulse',
+  note: 'Órbita dinámica',
+  href: 'modelo-14/',
+  src: 'previews/modelo-14.png',
+  alt: 'Vista previa del modelo 14 Orbital Pulse'
+});
+
+assert.throws(() => getModelState('15'), /Unknown showroom model: 15/);
 
 console.log('Showroom state contract passed');

@@ -11,7 +11,8 @@ const models = {
   '10': ['Butaca', 'Cartelera moderna'],
   '11': ['Motivo', 'Gran espectáculo'],
   '12': ['Aurora', 'Señal nocturna'],
-  '13': ['Vértigo', 'Señal cambiante']
+  '13': ['Vértigo', 'Señal cambiante'],
+  '14': ['Orbital Pulse', 'Órbita dinámica']
 };
 
 export function getModelState(modelId) {

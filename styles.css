@@ -119,6 +119,8 @@ em { font-style: italic; }
 .model-card--aurora .card-badge--featured { background: #18234B; border-color: #18234B; color: #B8F6D1; }
 .model-card--vertigo { --accent: #FF6B57; }
 .model-card--vertigo .card-badge--featured { background: #171C5A; border-color: #171C5A; color: #FFD45C; }
+.model-card--orbital { --accent: #5865F2; }
+.model-card--orbital .card-badge--featured { background: #11152F; border-color: #11152F; color: #D9F36B; }
 .model-card--featured figure { aspect-ratio: 1.9; }
 .model-card--featured .card-copy { align-content: end; padding: clamp(1.7rem, 3.8vw, 3.5rem); }
 .model-card--featured .card-copy > span:first-child { grid-column: 1 / -1; }

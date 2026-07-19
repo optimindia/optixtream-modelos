@@ -1,11 +1,11 @@
 # OptiXtream · Catálogo de modelos
 
-Catálogo público y repositorio monolítico de trece modelos web independientes para experiencias de streaming.
+Catálogo público y repositorio monolítico de catorce modelos web independientes para experiencias de streaming.
 
 ## Estructura
 
 - `/` — catálogo visual público.
-- `/modelo-01/` a `/modelo-13/` — sitios autocontenidos, cada uno con su HTML, CSS, JavaScript e imágenes.
+- `/modelo-01/` a `/modelo-14/` — sitios autocontenidos, cada uno con su HTML, CSS, JavaScript e imágenes.
 - `/previews/` — capturas reales usadas por el catálogo.
 - `tests/validate-site.mjs` — contrato de integridad de rutas, archivos, referencias y marca.
 - `scripts/migrate-models.mjs` — migración reproducible desde el taller original.
