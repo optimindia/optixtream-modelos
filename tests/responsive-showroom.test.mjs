@@ -24,7 +24,7 @@ assert.match(
 );
 assert.match(styles, /font-weight:\s*300/, 'fine typography must use a real 300 weight');
 assert.match(script, /},\s*180\);/, 'showroom transitions must use the calmer timing');
-assert.equal((html.match(/class="model-picker/g) || []).length, 11);
-assert.equal((html.match(/class="model-card(?:\s[^"]*)?"/g) || []).length, 11);
+assert.equal((html.match(/class="model-picker/g) || []).length, 12);
+assert.equal((html.match(/class="model-card(?:\s[^"]*)?"/g) || []).length, 12);
 
 console.log('Responsive showroom contract passed');
