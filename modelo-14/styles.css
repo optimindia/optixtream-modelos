@@ -325,7 +325,9 @@ img { max-width: 100%; }
   .orbit-note { min-height: 13rem; }
   .channel-picker { overflow-x: auto; flex-wrap: nowrap; padding-bottom: .15rem; }
   .channel-chip { flex: 0 0 auto; }
-  .live-grid { width: calc(100% + 1rem); grid-template-columns: 79vw 79vw 79vw; gap: .65rem; overflow-x: auto; padding-right: 1rem; scroll-snap-type: x mandatory; }
+.live-grid { width: calc(100% + 1rem); grid-template-columns: 79vw 79vw 79vw; gap: .65rem; overflow-x: auto; padding-right: 1rem; scroll-snap-type: x mandatory; }
+.live-grid { scrollbar-width: none; }
+.live-grid::-webkit-scrollbar { display: none; }
   .live-feature, .live-tile { min-height: 20rem; grid-column: auto; grid-row: auto; scroll-snap-align: start; }
   .live-feature { border-radius: 2.6rem 0 2.6rem 0; }
   .live-tile { border-radius: 0 2.6rem 0 2.6rem; }
@@ -356,4 +358,62 @@ img { max-width: 100%; }
   .marquee-track, .radar-scan { animation: none; }
   .button, .feature-image img, .live-feature img { transition: none; }
   .motion-ready [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
+}
+
+/* Structural rhythm: the sections themselves move, not only their cards. */
+main { overflow: clip; }
+.signal-marquee { position: relative; z-index: 4; margin-block: -.95rem; padding-block: 1.55rem; clip-path: polygon(0 17%, 100% 0, 100% 83%, 0 100%); }
+.constellation { position: relative; isolation: isolate; overflow: clip; }
+.constellation::before { position: absolute; z-index: -1; top: 4rem; right: -9rem; width: 34rem; height: 34rem; border: 1px solid rgba(88, 101, 242, .14); border-radius: 50%; content: ''; transform: rotate(24deg) scaleX(1.25); }
+.constellation::after { position: absolute; z-index: -1; top: 0; left: -15%; width: 125%; height: 14rem; background: linear-gradient(105deg, transparent 0 42%, rgba(200, 184, 255, .22) 42.2% 52%, transparent 52.2%); content: ''; pointer-events: none; }
+.constellation-grid { align-items: start; }
+.constellation-side { margin-top: 3rem; }
+.orbit-note { margin-inline: -2rem 2rem; }
+.live-section { position: relative; isolation: isolate; margin-top: -1.8rem; overflow: clip; }
+.live-section::before { position: absolute; z-index: 0; top: -3.5rem; right: -2%; left: -2%; height: 8rem; background: var(--fog); clip-path: polygon(0 0, 100% 22%, 100% 51%, 0 100%); content: ''; }
+.live-section::after { position: absolute; z-index: 0; right: -12rem; bottom: -15rem; width: 35rem; height: 35rem; border: 1px solid rgba(217, 243, 107, .25); border-radius: 50%; content: ''; transform: rotate(-24deg) scaleX(1.25); pointer-events: none; }
+.live-shell { position: relative; z-index: 1; }
+.experience { position: relative; isolation: isolate; overflow: clip; }
+.experience::before { position: absolute; z-index: -1; top: 8rem; left: -19rem; width: 39rem; height: 39rem; border: 1px solid rgba(200, 184, 255, .36); border-radius: 50%; content: ''; transform: rotate(17deg) scaleX(1.2); }
+.experience::after { position: absolute; z-index: -1; top: 0; right: -18%; width: 72%; height: 100%; background: linear-gradient(126deg, transparent 0 46%, rgba(88, 101, 242, .055) 46.2% 56%, transparent 56.2%); content: ''; pointer-events: none; }
+.benefit-grid { margin-bottom: 1.5rem; }
+.benefit-orbit:nth-child(2) { transform: translateY(1.6rem); }
+.benefit-orbit:nth-child(3) { transform: translateY(-.6rem); }
+.steps-section { position: relative; isolation: isolate; overflow: clip; }
+.steps-section::before { position: absolute; z-index: 0; top: -3.7rem; right: -2%; left: -2%; height: 8rem; background: var(--fog); clip-path: polygon(0 0, 100% 36%, 100% 62%, 0 100%); content: ''; }
+.steps-section::after { position: absolute; z-index: 0; right: -4%; bottom: -3.5rem; left: -4%; height: 7rem; background: var(--indigo); clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%); content: ''; }
+.steps-section > .shell { position: relative; z-index: 1; }
+.steps-grid article:nth-child(2) { transform: translateY(1.35rem); }
+.plans { position: relative; isolation: isolate; overflow: clip; }
+.plans::before { position: absolute; z-index: -1; top: 0; right: -8%; left: -8%; height: 15rem; background: linear-gradient(115deg, rgba(88, 101, 242, .11), transparent 62%); clip-path: polygon(0 0, 100% 23%, 100% 54%, 0 100%); content: ''; }
+.plans > * { position: relative; z-index: 1; }
+.plan-card:nth-child(1) { transform: translateY(1.1rem); }
+.plan-card:nth-child(3) { transform: translateY(-.65rem); }
+.faq-section { position: relative; isolation: isolate; overflow: clip; }
+.faq-section::before { position: absolute; z-index: -1; top: 9rem; right: -19rem; width: 38rem; height: 38rem; border: 1px solid rgba(88, 101, 242, .12); border-radius: 50%; content: ''; transform: rotate(-18deg) scaleX(1.2); }
+
+@media (max-width: 820px) {
+  .signal-marquee { margin-block: -.5rem; padding-block: 1.1rem; clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%); }
+  .constellation-side { margin-top: 1rem; }
+  .orbit-note { margin-inline: 0; }
+  .live-section { margin-top: -1rem; }
+  .live-section::before { top: -2.3rem; height: 5.5rem; }
+  .benefit-orbit:nth-child(2), .benefit-orbit:nth-child(3), .steps-grid article:nth-child(2), .plan-card:nth-child(1), .plan-card:nth-child(3) { transform: none; }
+  .benefit-grid { margin-bottom: 0; }
+  .steps-section::before { top: -2.2rem; height: 5.5rem; }
+  .steps-section::after { bottom: -2rem; height: 4.5rem; }
+  .plans::before { height: 10rem; }
+}
+
+@media (max-width: 620px) {
+  .signal-marquee { margin-block: -.35rem; padding-block: .85rem; }
+  .constellation::before { top: 11rem; right: -17rem; width: 28rem; height: 28rem; }
+  .constellation::after { height: 10rem; }
+  .live-section { margin-top: -.7rem; }
+  .live-section::before { top: -1.5rem; height: 4rem; }
+  .experience::before { top: 12rem; left: -18rem; width: 28rem; height: 28rem; }
+  .steps-section::before { top: -1.5rem; height: 4rem; }
+  .steps-section::after { bottom: -1.5rem; height: 3.5rem; }
+  .plans::before { height: 7rem; }
+  .faq-section::before { top: 13rem; right: -18rem; width: 28rem; height: 28rem; }
 }
