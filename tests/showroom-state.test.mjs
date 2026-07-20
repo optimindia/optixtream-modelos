@@ -46,6 +46,15 @@ assert.deepEqual(getModelState('14'), {
   alt: 'Vista previa del modelo 14 Orbital Pulse'
 });
 
-assert.throws(() => getModelState('15'), /Unknown showroom model: 15/);
+assert.deepEqual(getModelState('15'), {
+  id: '15',
+  title: 'Chromatic Live',
+  note: 'IPTV a todo color',
+  href: 'modelo-15/',
+  src: 'previews/modelo-15.png',
+  alt: 'Vista previa del modelo 15 Chromatic Live'
+});
+
+assert.throws(() => getModelState('16'), /Unknown showroom model: 16/);
 
 console.log('Showroom state contract passed');

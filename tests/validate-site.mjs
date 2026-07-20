@@ -3,7 +3,7 @@ import { dirname, join, relative, resolve, sep } from 'node:path';
 
 const root = process.cwd();
 const failures = [];
-const models = Array.from({ length: 14 }, (_, index) => `modelo-${String(index + 1).padStart(2, '0')}`);
+const models = Array.from({ length: 15 }, (_, index) => `modelo-${String(index + 1).padStart(2, '0')}`);
 const rootFiles = ['index.html', 'styles.css', 'script.js', '404.html', 'favicon.svg', '_headers', '_redirects', 'README.md'];
 const productionExtensions = new Set(['.html', '.css', '.js']);
 const debugPattern = /(?:^|[-_.])(debug|preview|capture|captura|crop|mob\d*|backup|bak)(?:[-_.]|$)/i;

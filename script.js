@@ -12,7 +12,8 @@ const models = {
   '11': ['Motivo', 'Gran espectáculo'],
   '12': ['Aurora', 'Señal nocturna'],
   '13': ['Vértigo', 'Señal cambiante'],
-  '14': ['Orbital Pulse', 'Órbita dinámica']
+  '14': ['Orbital Pulse', 'Órbita dinámica'],
+  '15': ['Chromatic Live', 'IPTV a todo color']
 };
 
 export function getModelState(modelId) {
