@@ -55,6 +55,15 @@ assert.deepEqual(getModelState('15'), {
   alt: 'Vista previa del modelo 15 Chromatic Live'
 });
 
-assert.throws(() => getModelState('16'), /Unknown showroom model: 16/);
+assert.deepEqual(getModelState('16'), {
+  id: '16',
+  title: 'Prime Signal',
+  note: 'Cada señal es protagonista',
+  href: 'modelo-16/',
+  src: 'previews/modelo-16.png',
+  alt: 'Vista previa del modelo 16 Prime Signal'
+});
+
+assert.throws(() => getModelState('17'), /Unknown showroom model: 17/);
 
 console.log('Showroom state contract passed');

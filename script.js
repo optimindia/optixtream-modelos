@@ -13,7 +13,8 @@ const models = {
   '12': ['Aurora', 'Señal nocturna'],
   '13': ['Vértigo', 'Señal cambiante'],
   '14': ['Orbital Pulse', 'Órbita dinámica'],
-  '15': ['Chromatic Live', 'IPTV a todo color']
+  '15': ['Chromatic Live', 'IPTV a todo color'],
+  '16': ['Prime Signal', 'Cada señal es protagonista']
 };
 
 export function getModelState(modelId) {
